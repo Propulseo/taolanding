@@ -1,0 +1,7 @@
+                        {% for item in nav %}
+                            <li class="menu-item">
+                                <a href="{{ item.href }}" class="item-link link text-caption">
+                                    <span>{{ item.num }} /</span>{{ item.label }}
+                                </a>
+                            </li>
+                        {% endfor %}

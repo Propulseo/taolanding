@@ -1,0 +1,39 @@
+<!-- Blog Header -->
+<header class="tf-header m-0" style="position:sticky;top:0;z-index:1000;">
+    <div class="header-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-1">
+                    <a href="index.html" class="logo-site logo-text">
+                        {{ site.name }}<span class="text-primary">_</span>
+                    </a>
+                </div>
+                <div class="col-7 d-none d-md-block">
+                    <div class="box-navigation">
+                        <ul class="nav-menu-main">
+                        {% include "partials/nav-numbered.njk" %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2 d-none d-sm-block">
+                    <div class="header-contact">
+                        <a href="mailto:{{ site.email }}" class="link text-caption">{{ site.email | upper }}</a>
+                        <p class="text-caption">
+                            KOH TAO <span class="clock"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 d-flex justify-content-end align-items-start">
+                    <a href="#mobileMenu" data-bs-toggle="offcanvas"
+                       class="btn-mobile-menu text-caption link d-md-none">
+                        <i class="icon icon-menu"></i>
+                        MENU
+                    </a>
+                    <a href="index.html#contactScroll" class="tf-btn d-none d-md-flex">
+                        <span class="text-caption">CONTACT</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

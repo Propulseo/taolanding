@@ -1,0 +1,63 @@
+<!-- Différence clé -->
+<section class="section-award flat-spacing bg-surface">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 ms-auto">
+                <div class="col-right">
+                    <h6 class="mini-title text-caption text-black-64">CE QUI CHANGE TOUT</h6>
+                    <h5 class="fw-normal letter-space--2 text-black">
+                        Les autres outils IA oublient tout à chaque session.
+                        Tao se souvient de toi depuis le premier jour.
+                        Tes objectifs, tes blocages, tes habitudes — tout reste.
+                        C'est la seule IA qui te connaît vraiment.
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-left">
+                    <p class="desc text-black-64 mini-title">
+                        1 check-in le matin. <br>
+                        1 bilan le soir. <br>
+                        Tao lance la conversation. Tu réponds.
+                    </p>
+                    <div dir="ltr" class="swiper tf-swiper swiper-t2"
+                         data-preview="3" data-tablet="3" data-mobile="3" data-mobile-sm="3"
+                         data-loop="true" data-auto="true" data-delay="1000"
+                         data-speed="1000" data-direction="vertical" data-space="4">
+                        <div class="swiper-wrapper">
+                            {% set moments = [
+                                { label: "7h15", sub: "check-in matin" },
+                                { label: "21h30", sub: "bilan du soir" },
+                                { label: "Vendredi", sub: "revue de semaine" }
+                            ] %}
+                            {% for m in moments %}
+                            {% for dup in range(0, 2) %}
+                            <div class="swiper-slide">
+                                <div class="award-item h4 letter-space--2">
+                                    {{ m.label }}
+                                    <span class="text-body-1 letter-space--1">{{ m.sub }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-flip-image flat-spacing">
+        <div class="container">
+            <div class="flip-image-list gsap-anime-2">
+                {% for i in range(1, 7) %}
+                <div class="flip-image">
+                    <img loading="lazy" width="325" height="325"
+                         src="assets/images/section/award-{{ i }}.jpg" alt="Image">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

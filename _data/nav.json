@@ -1,0 +1,8 @@
+[
+  { "num": "01", "label": "ACCUEIL", "href": "index.html" },
+  { "num": "02", "label": "PROBLÈME", "href": "index.html#workScroll" },
+  { "num": "03", "label": "FONCTIONNALITÉS", "href": "index.html#serviceScroll" },
+  { "num": "04", "label": "TARIFS", "href": "index.html#pricingScroll" },
+  { "num": "05", "label": "BLOG", "href": "blog.html" },
+  { "num": "06", "label": "CONTACT", "href": "index.html#contactScroll" }
+]

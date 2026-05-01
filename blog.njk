@@ -1,0 +1,56 @@
+---
+layout: layouts/blog-base.njk
+permalink: blog.html
+title: Blog — Tao
+description: Conseils productivité, organisation et focus. Le blog de Tao.
+---
+
+{% set pageTitle = "Blog" %}
+{% set breadcrumbs = [
+    { href: "index.html", label: "Accueil" },
+    { label: "Blog" }
+] %}
+{% include "partials/page-title.njk" %}
+
+<section class="section-blog flat-spacing">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-7">
+                <div class="tf-grid-layout">
+
+                    {% set articles = [
+                        { img: "blog-1.jpg", category: "Productivité", title: "Article à venir" },
+                        { img: "blog-2.jpg", category: "Organisation", title: "Article à venir" },
+                        { img: "blog-3.jpg", category: "Focus", title: "Article à venir" }
+                    ] %}
+
+                    {% for article in articles %}
+                    <div class="article-blog style-horizontal hover-img effectFade fadeUp no-div">
+                        <a href="article.html" class="blog-image img-style">
+                            <img loading="lazy" width="426" height="307"
+                                 src="assets/images/blog/{{ article.img }}" alt="{{ article.title }}">
+                        </a>
+                        <div class="blog-content">
+                            <div class="infor">
+                                <p class="infor_sub text-white-64">{{ article.category }}</p>
+                                <h6>
+                                    <a href="article.html" class="link infor_name">
+                                        {{ article.title }}
+                                    </a>
+                                </h6>
+                            </div>
+                            <a href="article.html" class="btn-action">
+                                <i class="icon icon-arrow-top-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                {% include "sections/blog-sidebar.njk" %}
+            </div>
+        </div>
+    </div>
+</section>

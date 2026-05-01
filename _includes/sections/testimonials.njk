@@ -1,0 +1,110 @@
+<!-- Témoignages -->
+<!-- TODO: Replace with real testimonials after beta -->
+<section class="section-testimonial flat-spacing tf-btn-swiper-main">
+    <h6 class="mini-title text-caption text-white-64 text-center">ILS UTILISENT TAO AU QUOTIDIEN</h6>
+
+    {% set testimonials = [
+        {
+            name: "Thomas D.",
+            role: "Consultant freelance · Paris",
+            img: "tes-v2-1.jpg",
+            text: "J'avais ChatGPT, Notion et Todoist en même temps. Je passais plus de temps à organiser mes outils qu'à bosser. Tao m'envoie un message, je réponds. C'est tout."
+        },
+        {
+            name: "Sarah M.",
+            role: "Directrice de projet · Lyon",
+            img: "tes-v2-2.jpg",
+            text: "Le check-in de 7h15 a changé mes matinées. Je sais ce qui compte avant même d'ouvrir ma boîte mail. Plus besoin de réfléchir à quoi attaquer."
+        },
+        {
+            name: "Maxime L.",
+            role: "Développeur indépendant · Bordeaux",
+            img: "tes-v2-3.jpg",
+            text: "J'ai essayé de me construire le même système sur ChatGPT. Ça a tenu 3 semaines. Tao se souvient de mes objectifs depuis le jour 1."
+        },
+        {
+            name: "Thomas D.",
+            role: "Consultant freelance · Paris",
+            img: "tes-v2-1.jpg",
+            text: "J'avais ChatGPT, Notion et Todoist en même temps. Je passais plus de temps à organiser mes outils qu'à bosser. Tao m'envoie un message, je réponds. C'est tout."
+        }
+    ] %}
+
+    <div dir="ltr" class="swiper tf-swiper swiper-testimonial"
+         data-preview="2.15" data-tablet="2.2" data-mobile-sm="1.5" data-mobile="1.2"
+         data-loop="true" data-center="true" data-space-lg="40"
+         data-space-md="30" data-space="15" data-init="1">
+        <div class="swiper-wrapper">
+            {% for t in testimonials %}
+            <div class="swiper-slide">
+                <div class="testimonial-v01">
+                    <div class="tes-author">
+                        <div class="author_image">
+                            <img loading="lazy" width="437" height="328"
+                                 src="assets/images/section/{{ t.img }}" alt="Image">
+                        </div>
+                        <div class="author_info">
+                            <h6 class="info__name text-body-1 letter-space--1">{{ t.name }}</h6>
+                            <p class="info__duty">{{ t.role }}</p>
+                        </div>
+                    </div>
+                    <div class="br-line"></div>
+                    <p class="tes-text text-body-1">"{{ t.text }}"</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="group-btn-slider">
+            <div class="lh-1 nav-prev-swiper">
+                <i class="fs-8 icon icon-arrow-caret-left"></i>
+            </div>
+            <div class="sw-dot-default tf-sw-pagination"></div>
+            <div class="lh-1 nav-next-swiper">
+                <i class="fs-8 icon icon-arrow-caret-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chiffres clés -->
+    <div class="indicator-wrap flat-spacing">
+        <div class="bg-img">
+            <img loading="lazy" width="1440" height="800"
+                 src="assets/images/item/gird-net.png" alt="Image">
+        </div>
+        <div class="container">
+            <div class="row">
+                {% set stats = [
+                    {
+                        label: "Minutes perdues chaque matin",
+                        number: 15, suffix: "",
+                        sub: "à décider quoi faire<br>sans système clair"
+                    },
+                    {
+                        label: "Minutes pour se reconcentrer",
+                        number: 23, suffix: "",
+                        sub: "après une seule interruption<br>(étude UC Irvine)"
+                    },
+                    {
+                        label: "Apps productivité abandonnées",
+                        number: 70, suffix: "%",
+                        sub: "en moins de 3 semaines<br>trop complexes pour durer"
+                    }
+                ] %}
+                {% for s in stats %}
+                <div class="col-md-4">
+                    <div class="wg-indicator {{ 'mb-0' if loop.last else 'mb-md-0' }}">
+                        <p class="indicate-title text-body-1 letter-space--1">
+                            <span class="text-primary">//</span> {{ s.label }}
+                        </p>
+                        <p class="indicate-counter wg-counter text-display-1 fw-medium">
+                            <span class="odometer" data-number="{{ s.number }}">0</span>
+                            {% if s.suffix %} <span class="text-primary">{{ s.suffix }}</span>{% endif %}
+                        </p>
+                        <p class="indicate-sub">{{ s.sub | safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

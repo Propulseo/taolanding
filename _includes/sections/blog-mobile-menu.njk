@@ -1,0 +1,47 @@
+<!-- Blog Mobile Menu -->
+<div class="offcanvas offcanvas-bottom offcanvas-menu" id="mobileMenu">
+    <div class="offcanvas-content">
+        <div class="container h-100">
+            <div class="offcanvas-content_wrapin">
+                <div class="canvas_head">
+                    <a href="index.html" class="logo-site logo-text">
+                        {{ site.name }}<span class="text-primary">_</span>
+                    </a>
+                    <a href="#" data-bs-dismiss="offcanvas" class="btn-mobile-menu text-caption link">
+                        <i class="icon icon-close"></i>
+                        FERMER
+                    </a>
+                </div>
+                <div class="canvas_center">
+                    <ul class="nav-ul-mb">
+                        {% set blogMenuItems = [
+                            { href: "index.html", label: "Accueil" },
+                            { href: "blog.html", label: "Blog" },
+                            { href: "index.html#aboutScroll", label: "À propos" },
+                            { href: "index.html#contactScroll", label: "Contact" }
+                        ] %}
+                        {% for item in blogMenuItems %}
+                        <li>
+                            <div class="item">
+                                <a href="{{ item.href }}" class="mb-menu-link text-display-1">
+                                    <span class="text">{{ item.label }}</span>
+                                    <div class="infiniteSlide_text_main">
+                                        <div class="infiniteSlide infiniteSlide_text" data-clone="5">
+                                            {% for j in range(0, 3) %}
+                                            <p class="text-body-2 letter-space--1">
+                                                <span class="text-primary">//</span> {{ item.label }}
+                                            </p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% include "partials/menu-foot.njk" %}
+            </div>
+        </div>
+    </div>
+</div>

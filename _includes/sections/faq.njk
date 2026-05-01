@@ -1,0 +1,70 @@
+<!-- FAQ -->
+<section class="section-faq type-2 flat-spacing bg-surface">
+    <div class="container">
+        <div class="s-header d-block">
+            <h2 class="title text-display-2 letter-space--3 text-center text-black effectFade fadeUp">
+                <span class="text">
+                    Questions
+                    <span class="icon">
+                        <img loading="lazy" width="80" height="80"
+                             src="assets/images/item/global-2.svg" alt="Image">
+                    </span>
+                </span> <br>
+                fréquentes
+            </h2>
+        </div>
+
+        {% set faqs = [
+            {
+                q: "En quoi Tao est différent de ChatGPT ?",
+                a: "ChatGPT oublie tout après chaque session et attend que tu viennes. Tao garde tout en mémoire depuis le jour 1 et t'envoie un message chaque matin sans que tu aies à y penser.",
+                open: false
+            },
+            {
+                q: "Combien de temps ça prend par jour ?",
+                a: "60 secondes le matin pour définir ta priorité. 60 secondes le soir pour faire le bilan. Le reste est à la demande, quand tu en as besoin.",
+                open: true
+            },
+            {
+                q: "Quelles données Tao collecte-t-il ?",
+                a: "Uniquement ce que tu lui écris. Tu peux consulter et supprimer tes données à tout moment. Conforme RGPD, hébergé en Europe.",
+                open: false
+            },
+            {
+                q: "Ça marche sur mobile ?",
+                a: "Tao est une PWA. Tu l'ajoutes à ton écran d'accueil depuis Safari ou Chrome. Même expérience qu'une app native, sans passer par l'App Store.",
+                open: false
+            },
+            {
+                q: "Pourquoi s'inscrire maintenant ?",
+                a: "Accès bêta limité à 500 places. Les premiers inscrits gardent le tarif early adopter à vie et participent aux choix de fonctionnalités.",
+                open: false
+            }
+        ] %}
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion-faq_list" id="accordion-faq_list">
+                    {% for faq in faqs %}
+                    <div class="accordion-faq_item cl-line-2" role="presentation">
+                        <div class="accordion-action text-body-1 letter-space--1 fw-medium {{ '' if faq.open else 'collapsed' }}"
+                             data-bs-target="#faq-{{ loop.index }}" role="button"
+                             data-bs-toggle="collapse" aria-controls="faq-{{ loop.index }}"
+                             aria-expanded="{{ 'true' if faq.open else 'false' }}">
+                            <span class="accordion-order text-black-64">{{ "0" if loop.index < 10 else "" }}{{ loop.index }}</span>
+                            <p class="accordion-text text-black">{{ faq.q }}</p>
+                            <div class="ic-wrap d-flex">
+                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
+                            </div>
+                        </div>
+                        <div id="faq-{{ loop.index }}" class="collapse {{ 'show' if faq.open else '' }}"
+                             data-bs-parent="#accordion-faq_list">
+                            <p class="accordion-content text-black-64">{{ faq.a }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

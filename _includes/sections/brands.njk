@@ -1,0 +1,32 @@
+<!-- Intégrations -->
+<div class="section-brand flat-spacing bg-surface">
+    <div class="container">
+        <h6 class="mini-title text-caption text-black-64 text-center">
+            SE CONNECTE À TES OUTILS
+        </h6>
+    </div>
+    <div class="s-header d-block overflow-hidden">
+        <div class="infiniteSlide infiniteSlide_select_work" data-clone="4">
+            {% set tools = [
+                { name: "Google Calendar", logo: "google-calendar.svg" },
+                { name: "Claude AI", logo: "claude-ai.svg" },
+                { name: "Notion", logo: "notion.svg" },
+                { name: "Slack", logo: "slack.svg" },
+                { name: "WhatsApp", logo: "whatsapp.svg" },
+                { name: "Todoist", logo: "todoist.svg" },
+                { name: "Telegram", logo: "telegram.svg" },
+                { name: "Apple Reminders", logo: "apple-reminders.svg" },
+                { name: "Google Tasks", logo: "google-tasks.svg" },
+                { name: "Obsidian", logo: "obsidian.svg" }
+            ] %}
+            {% for tool in tools %}
+            <div style="display:inline-flex;align-items:center;gap:0.5em;white-space:nowrap;padding:0 0.3em;">
+                <img src="assets/images/brands/{{ tool.logo }}" alt="{{ tool.name }}"
+                     width="32" height="32" loading="lazy" style="flex-shrink:0;">
+                <span class="h4 letter-space--2 fw-semibold text-black">{{ tool.name }}</span>
+            </div>
+            <span class="text-primary h4" style="padding:0 0.3em;">·</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>

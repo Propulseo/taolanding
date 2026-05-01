@@ -1,0 +1,55 @@
+<!-- CTA / Contact -->
+<section class="section-cta flat-spacing" id="contactScroll">
+    <div class="s-header d-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-2 offset-lg-2 col-lg-2">
+                    <div class="col-left">
+                        <a href="index.html" class="logo-custom">
+                            <div class="logo-site-sv" style="display:flex;align-items:center;justify-content:center;">
+                                <span style="font-size:1.6rem;font-weight:700;color:#07C42C;">{{ site.name }}_</span>
+                            </div>
+                            <span class="line-vertical left"></span>
+                            <span class="line-vertical right"></span>
+                            <span class="line-horizontal top"></span>
+                            <span class="line-horizontal bottom"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-10 col-lg-6">
+                    <h2 class="text-display-2 letter-space--3 text-end effectFade fadeUp">
+                        {{ site.tagline | replace(". ", ".<br>") | safe }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form class="form-cta">
+                    <div class="form-content">
+                        <div class="tf-grid-layout sm-col-2">
+                            <fieldset class="tf-field">
+                                <input class="tf-input" type="text" placeholder required>
+                                <label class="tf-lable">Prénom <span class="text-primary">*</span></label>
+                            </fieldset>
+                            <fieldset class="tf-field">
+                                <input class="tf-input" type="email" placeholder required>
+                                <label class="tf-lable">Email <span class="text-primary">*</span></label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <button type="submit" class="tf-btn">
+                            <span class="text-caption">REJOINDRE LA LISTE D'ATTENTE</span>
+                        </button>
+                        <p class="text-body-1">
+                            contact — <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

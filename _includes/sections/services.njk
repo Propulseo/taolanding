@@ -1,0 +1,64 @@
+<!-- Fonctionnalités -->
+<section class="section-service-v2 flat-spacing" id="serviceScroll">
+    <div class="container">
+        <div class="br-line d-flex"></div>
+        <div class="service-accordion-main" id="service-accordion-main">
+
+            {% set services = [
+                {
+                    id: "service-1",
+                    title: "Boussole Trimestrielle",
+                    num: "01",
+                    img: "service-4.jpg",
+                    expanded: true,
+                    items: ["Définis ton objectif du trimestre", "Toutes tes décisions en découlent", "Tao te le rappelle chaque semaine"]
+                },
+                {
+                    id: "service-2",
+                    title: "Les 3 Pierres",
+                    num: "02",
+                    img: "service-5.jpg",
+                    items: ["3 tâches max par jour, pas plus", "Alignées sur ta boussole", "Journée gagnée si tu les fais"]
+                },
+                {
+                    id: "service-3",
+                    title: "Victoire du Jour",
+                    num: "03",
+                    img: "service-6.jpg",
+                    items: ["La tâche la plus importante de ta journée", "Tao te la demande à 7h15", "Il vérifie à 21h30 si c'est fait"]
+                }
+            ] %}
+
+            {% for svc in services %}
+            <div class="service-accordion_item effectFade fadeUp no-div" role="presentation">
+                <div class="accordion-action {{ '' if svc.expanded else 'collapsed' }}"
+                     data-bs-target="#{{ svc.id }}" role="button"
+                     data-bs-toggle="collapse" aria-controls="{{ svc.id }}"
+                     aria-expanded="{{ 'true' if svc.expanded else 'false' }}">
+                    <h5 class="text-display-1 letter-space--3">{{ svc.title }}</h5>
+                </div>
+                <div id="{{ svc.id }}" class="collapse {{ 'show' if svc.expanded else '' }}"
+                     data-bs-parent="#service-accordion-main">
+                    <div class="accordion-content">
+                        <div class="image-left">
+                            <img width="860" height="373"
+                                 src="assets/images/section/{{ svc.img }}" alt="Image">
+                        </div>
+                        <div class="content-right">
+                            <p class="number-order text-display-1 fw-medium letter-space--3 text-white-32">
+                                {{ svc.num }}
+                            </p>
+                            <ul class="tf-list vertical gap-12 text-body-1">
+                                {% for item in svc.items %}
+                                <li><span class="text-primary">//</span> {{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

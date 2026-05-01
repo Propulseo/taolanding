@@ -1,0 +1,67 @@
+<!-- Blog Sidebar -->
+<div class="blog-sidebar m-lg-0">
+    <div class="sidebar-item effectFade fadeUp no-div">
+        <h5 class="sidebar-title">Recherche</h5>
+        <form class="form-search">
+            <fieldset class="text">
+                <input type="text" placeholder="Rechercher" name="search" tabindex="0"
+                       value="" aria-required="true" required="">
+            </fieldset>
+            <button type="submit" class="link text-white">
+                <i class="icon icon-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="sidebar-item effectFade fadeUp no-div">
+        <h5 class="sidebar-title">Articles récents</h5>
+        <div class="list-relatest-post">
+            {% set recentPosts = [
+                { img: "blog-1.jpg", title: "Article à venir", date: "Bientôt" },
+                { img: "blog-2.jpg", title: "Article à venir", date: "Bientôt" },
+                { img: "blog-3.jpg", title: "Article à venir", date: "Bientôt" }
+            ] %}
+            {% for post in recentPosts %}
+            <div class="relatest-post-item">
+                <div class="image">
+                    <img loading="lazy" width="80" height="80"
+                         src="assets/images/blog/{{ post.img }}" alt="{{ post.title }}">
+                </div>
+                <div class="content">
+                    <h6 class="title text-body-1">
+                        <a href="article.html" class="link">{{ post.title }}</a>
+                    </h6>
+                    <p class="time text-body-3 text-white-64">{{ post.date }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="sidebar-item effectFade fadeUp no-div">
+        <h5 class="sidebar-title">Catégories</h5>
+        <div class="sidebar-categories">
+            {% set categories = [
+                { name: "Productivité", count: 3 },
+                { name: "Organisation", count: 2 },
+                { name: "Focus", count: 1 }
+            ] %}
+            {% for cat in categories %}
+            <div class="item">
+                <a href="#" class="text-body-1 link">{{ cat.name }}</a>
+                <span class="text-body-3 text-white-64">({{ cat.count }})</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="sidebar-item effectFade fadeUp no-div">
+        <h5 class="sidebar-title">Tags populaires</h5>
+        <ul class="list-tags">
+            {% set tags = ["Productivité", "Organisation", "Focus", "IA", "Habitudes", "Gestion du temps"] %}
+            {% for tag in tags %}
+            <li><a class="text-body-2" href="#">{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

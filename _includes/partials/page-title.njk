@@ -1,0 +1,15 @@
+<div class="section-page-title">
+    <div class="container text-center">
+        <h1 class="page-title fw-semibold effectFade fadeZoom">{{ pageTitle }}</h1>
+        <div class="breadcrumbs effectFade fadeUp">
+            {% for crumb in breadcrumbs %}
+                {% if not loop.first %}<div>/</div>{% endif %}
+                {% if crumb.href %}
+                    <a href="{{ crumb.href }}" class="link">{{ crumb.label }}</a>
+                {% else %}
+                    <div>{{ crumb.label }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

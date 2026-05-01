@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-FR" lang="fr-FR">
+
+{% include "partials/head.njk" %}
+
+<body class="counter-scroll">
+    <canvas class="cursor-trail d-none d-xl-block" id="trail"></canvas>
+
+    {% include "sections/preloader.njk" %}
+
+    <main id="wrapper">
+        {{ content | safe }}
+    </main>
+
+    {% include "sections/mobile-menu.njk" %}
+
+{% include "partials/scripts.njk" %}
+    <script src="assets/js/unicornStudio.umd.js"></script>
+    <script>UnicornStudio.init();</script>
+</body>
+
+</html>

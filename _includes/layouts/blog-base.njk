@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-FR" lang="fr-FR">
+
+{% set titleDefault = "Blog" %}
+{% include "partials/head.njk" %}
+
+<body class="counter-scroll">
+    <canvas class="cursor-trail d-none d-xl-block" id="trail"></canvas>
+
+    <button id="goTop">
+        <span class="border-progress"></span>
+        <span class="ic-wrap">
+            <span class="icon icon-arrow-caret-right"></span>
+        </span>
+    </button>
+
+    <main id="wrapper">
+        {% include "sections/blog-header.njk" %}
+        {{ content | safe }}
+        {% include "sections/footer.njk" %}
+    </main>
+
+    {% include "sections/blog-mobile-menu.njk" %}
+
+{% include "partials/scripts.njk" %}
+</body>
+
+</html>

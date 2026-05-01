@@ -1,0 +1,74 @@
+---
+layout: layouts/blog-base.njk
+permalink: article.html
+title: Article — Tao
+description: Un article du blog Tao.
+---
+
+{% set pageTitle = "Blog" %}
+{% set breadcrumbs = [
+    { href: "index.html", label: "Accueil" },
+    { href: "blog.html", label: "Blog" },
+    { label: "Article" }
+] %}
+{% include "partials/page-title.njk" %}
+
+<section class="section-blog flat-spacing">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-7">
+                <div class="blog-single-wrap">
+                    <div class="image effectFade fadeZoom">
+                        <img loading="lazy" width="777" height="548"
+                             src="assets/images/blog/blog-4.jpg" alt="Image">
+                    </div>
+                    <div class="meta-list">
+                        <div class="meta-item">
+                            <i class="icon icon-user"></i>
+                            <span class="text-body-3 text-white-64">Tao</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="icon icon-clock"></i>
+                            <span class="text-body-3 text-white-64">Bientôt</span>
+                        </div>
+                    </div>
+                    <p class="text-body-2">
+                        Contenu de l'article à venir. Les thèmes seront définis prochainement.
+                    </p>
+                    <div class="blockquote-wrap">
+                        <h5 class="fw-medium text">
+                            " La productivité n'est pas une question de quantité, mais de clarté.
+                            Fais moins, mais fais ce qui compte vraiment. "
+                        </h5>
+                        <img loading="lazy" width="200" height="155"
+                             src="assets/images/item/quote.png" alt="Image">
+                    </div>
+                    <p class="text-body-2">
+                        Suite de l'article à venir.
+                    </p>
+                    <div class="entry-footer">
+                        <div class="tags-links">
+                            <h6 class="text-body-1">Tags :</h6>
+                            <ul class="list-tags flex-wrap">
+                                <li><a class="text-body-3" href="#">Productivité</a></li>
+                                <li><a class="text-body-3" href="#">Organisation</a></li>
+                                <li><a class="text-body-3" href="#">Focus</a></li>
+                            </ul>
+                        </div>
+                        <ul class="social-links justify-content-center">
+                            <li>
+                                <a href="{{ site.social.instagram }}"><i class="icon icon-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{ site.social.linkedin }}"><i class="icon icon-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                {% include "sections/blog-sidebar.njk" %}
+            </div>
+        </div>
+    </div>
+</section>
